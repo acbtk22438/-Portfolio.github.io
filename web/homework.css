@@ -22,3 +22,14 @@
 .banner img{
     width: 100%;
 }
+.about .wrap{
+    width: 1350px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.about .wrap .item iframe{
+    width: 400px;
+    margin: 0 10px;
+    padding: 20 10px;
+}

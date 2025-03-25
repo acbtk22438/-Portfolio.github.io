@@ -22,3 +22,15 @@
 .banner img{
     width: 100%;
 }
+.about .wrap{
+    width: 850px;
+    display: flex;
+    margin: auto;
+}
+.about .wrap .item{
+    width: 400px;
+}
+.about .wrap .item img{
+   max-height: 220px;
+   max-width: 220px;
+}

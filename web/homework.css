@@ -1,89 +1,159 @@
-.footer{
-    background-color: #333;
-    color: #aaa;
-    text-align: center;
-    padding: 10px 0;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
-.wrap{
+
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.header {
+  height: 50px;
+  background-color: #282923;
+  position: relative;
+  z-index: 10;
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 40px;
+  margin-left: 10px;
+}
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.menu_btn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: 36px;
+  background-color: #aaa;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0px 8px 0px #aaa, 0px -8px 0px #aaa;
+}
+
+
+#menu_control {
+  display: none;
+}
+nav {
+  width: 80%;
+  height: calc(100vh - 50px);
+  background-color: #282923;
+  position: absolute;
+  top: 50px;
+  left: -100%;
+  transition: 0.5s;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #a6e22c;
+  padding: 10px 20px;
+  border-bottom: 1px solid #a6e22c;
+}
+#menu_control:checked ~ .header nav {
+  left: 0;
+}
+
+
+.banner {
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.banner img.active {
+  opacity: 1;
+}
+.about {
+  flex: 1;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.wrap .item {
+  margin: 0 0 20px;
+}
+.item iframe {
+  width: 100%;
+  height: 315px;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .item {
     width: 100%;
-    max-width: 1600px;
-    margin: auto;
-}
-.banner img{
+  }
+
+  .item iframe {
     width: 100%;
-}
-#menu_control{
-    position: absolute;
-}
-.header{
-    height: 50px;
-    background-color: #ccc;
-    position: relative;
-}
-.logo{
-    width: 60px;
-    height: 40px;
-    margin-left: 10px;
-}
-.logo img{
-    display: block;
-}
-.menu_btn{
-    width: 40px;
-    height: 40px;
-    background-color: #000;
-    display: block;
-    position: absolute;
-    top:5px;
-    right:10px;
-}
-.menu_btn span{
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    display: block;
-    overflow: hidden;
-}
-.menu_btn::before{
-    content: '';
-    position: absolute;
-    height: 2px;
-    left: 2px;
-    width: 36px;
-    background-color: #aaa;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    box-shadow: 0px 8px 0px #aaa,
-                0px -8px 0px #aaa;
-}
-nav{
-    width: 80%;
-    height: calc(100vh - 50px);
-    background-color: #282923;
-    position: absolute;
-    top: 50px;
-    left: -100%;
-    transition: .5s;
-}
-nav a{
-    display: block;
-    text-decoration: none;
-    color: #a6e22c;
-    padding: 10px 20px;
-    border-bottom: 1px solid #a6e22c;
-}
-#menu_control:checked ~ .header nav{
-    left: 0;
-}
-.item{
-    margin: 0 10px 20px;
-}
-.item iframe{
-    width: 100%;
-}
-@media screen and (min-width:768px){
-    .menu_btn{display: none;}
+    height: 240px;
+  }
+
+  .about {
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+    .menu_btn{
+        display: none;}
     .header{
         display: flex;
         justify-content: space-between;
@@ -91,19 +161,16 @@ nav a{
     }
     nav{
         position: relative;
-        left:0;
+        left: 0;
         display: flex;
         width: auto;
         height: auto;
         top: 0;
         background-color: transparent;
+        align-items: center;
     }
     nav a{
         border-bottom: none;
     }
-    .wrap{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
 }
+

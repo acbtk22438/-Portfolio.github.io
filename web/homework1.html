@@ -24,7 +24,9 @@
    </div>
 
    <div class="banner">
-    <img src="https://picsum.photos/1200/300?random=1">
+    <img src="https://picsum.photos/1200/200?random=2" class="active">
+        <img src="https://picsum.photos/1200/200?random=3">
+        <img src="https://picsum.photos/1200/200?random=4">
    </div>
    
    <div class="about">
@@ -46,10 +48,16 @@
         </div>
     </div>
    </div>
+   
+      <script>
+    const images = document.querySelectorAll(".banner img");
+    let currentIndex = 0;
 
-   <div class="footer">
-    &copy; copyright 2025 by K
-  </div>
-  
+    setInterval(() => {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+    }, 5000);
+  </script>
 </body>
 </html>

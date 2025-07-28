@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Reset.css">
+    <link rel="stylesheet" href="Portfolio.css">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <a href="https://acbtk22438.github.io/-Portfolio.github.io/web/homework.html">Arduino</a>
+            <a href="https://acbtk22438.github.io/-Portfolio.github.io/web/homework1.html">Raspberry Pi Pico W</a>
+        </nav>
+    </div>
+
+    <div class="banner">
+        <img src="https://picsum.photos/800/100?random=2" class="active">
+        <img src="https://picsum.photos/800/100?random=3">
+        <img src="https://picsum.photos/800/100?random=4">
+    </div>
+ 
+    <div class="about">
+        <h2>相關板子及小專案</h2>
+        <p>以下板子所有的小專案都是在我大學期間上課或是我自己上網看文章或看影片所學的，<br>
+            以及這個網站和所有網頁都是。</p>
+       <div class="wrap">
+        <div class="item">
+            <img src="arduino.jpg">
+            <h3>Arduino</h3>
+            <p>以arduino為主的小專案，主要透過 C/C++語言進行開發，並使用 Arduino IDE 撰寫與上傳程式碼。</p>
+        </div>
+        <div class="item">
+            <img src="Raspberry Pi Pico W.jpg">
+            <h3>Raspberry Pi Pico W</h3>
+            <p>以Raspberry Pi Pico W為主的小專案，使用 MicroPython 語言進行開發，並透過 Thonny IDE 撰寫與上傳程式碼。</p>
+        </div>
+       </div>
+    </div>
+
+   
+
+     <script>
+    const images = document.querySelectorAll(".banner img");
+    let currentIndex = 0;
+    setInterval(() => {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+    }, 5000);
+  </script>
+</body>
+</html>

@@ -131,7 +131,7 @@ nav a {
   height: 315px;
   border: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -173,4 +173,5 @@ nav a {
         border-bottom: none;
     }
 }
+
 

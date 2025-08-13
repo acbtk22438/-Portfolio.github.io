@@ -110,16 +110,16 @@ nav a{
     left: 0;
 }
 .item{
-    margin: 0 10px 20px;
+    margin: 0 10px 10px;
 }
 .item iframe{
     width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
   }
 
@@ -134,10 +134,10 @@ nav a{
 
   .about {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 30px auto;
   }
 }
-@media screen and (min-width:768px){
+@media screen and (min-width:600px){
     .menu_btn{display: none;}
     .header{
         display: flex;
